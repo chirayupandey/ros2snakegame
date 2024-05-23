@@ -6,6 +6,7 @@ from turtlesim.msg import Pose
 from turtlesim.srv import Spawn,Kill
 import random
 import math
+import time
 msg3 = Pose()
 j=0
 class Myspawner(Node):
@@ -64,6 +65,7 @@ class TurtSnake(Node):
         distance = math.sqrt(math.pow(x,2)+math.pow(y,2))
         if distance<=0.5:
             kilturt2 = Killturt()
+            time.sleep(0.5)
             turt = Myspawner()
         else:
             pass
